@@ -75,7 +75,7 @@ export default function App({
             <p>Chat</p>
           </p>
           <Link
-            href="https://zoom-clone-wheat.vercel.app/sign-in?redirect_url=https%3A%2F%2Fzoom-clone-wheat.vercel.app%2F"
+            href={process.env.NEXT_PUBLIC_YOOM_URL!}
             className="mb-4 text-white font-bold hover:text-gray-300 text-center flex flex-col items-center gap-2"
           >
             <Video />
