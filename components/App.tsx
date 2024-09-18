@@ -1,11 +1,11 @@
 "use client";
 // import Image from "next/image";
 import { useCallback } from "react";
+
 import { ChannelOptions, ChannelSort } from "stream-chat";
 import { EmojiPicker } from "stream-chat-react/emojis";
 import {
   Channel,
-  ChannelHeader,
   ChannelList,
   //   ChannelPreviewProps,
   Chat,
@@ -17,26 +17,43 @@ import {
   Thread,
   TooltipUsernameMapper,
   useCreateChatClient,
+  ChannelHeader,
   //   useMessageContext,
   Window,
 } from "stream-chat-react";
 import "stream-chat-react/dist/css/index.css";
+// import { Button } from "@/components/ui/button";
 
 import { SearchIndex } from "emoji-mart";
-import { MessageSquare, Mic, Video } from "lucide-react";
-import Link from "next/link";
+import { Loader, Mic } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+// import CustomChannelHeader from "./CustomChannelHeader";
+import CustomDateSeparator from "./CustomDateSeparator";
+import Sidebar from "./Sidebar";
+
 // init({ data: SearchIndex });
+const emptyChat = () => {
+  return (
+    <div className="">
+      <p>No Channel found...</p>
+      <p> Please add a channel or join an existing channel</p>
+    </div>
+  );
+};
 export default function App({
   apiKey,
   createToken,
   userId,
   userName,
+  userImage,
 }: {
   apiKey: string;
   createToken: (userId: string) => Promise<string>;
   userId: string;
   userName: string;
+  userImage: string;
 }) {
+  const { toast } = useToast();
   const tokenProvider = useCallback(
     async () => await createToken(userId),
     [createToken, userId]
@@ -47,9 +64,10 @@ export default function App({
     userData: {
       id: userId,
       name: userName,
-      image: `https://getstream.io/random_svg/?name=${userName}`,
+      image: userImage,
     },
   });
+  // const {user} = useUser();
   const CustomMessageStatus = (props: MessageStatusProps) => {
     const allCapsUserName = useCallback<TooltipUsernameMapper>(
       (user) => (user.name || user.id).toUpperCase(),
@@ -60,43 +78,70 @@ export default function App({
   const sort: ChannelSort<DefaultStreamChatGenerics> = { last_message_at: -1 };
   const filters = { type: "messaging", members: { $in: [userId] } };
   const options: ChannelOptions = { limit: 10, state: true, watch: true };
+  const createNewChannel = async (channelName: string, users: string[]) => {
+    try {
+      if (!channelName.trim()) return;
 
+      // Create a new channel with the given name and users
+      const newChannel = client!.channel("messaging", {
+        name: channelName,
+        members: [userId, ...users], // Include the current user
+      });
+      await newChannel.create();
+      console.log("Channel created:", newChannel);
+      toast({
+        title: "Channel created",
+        description: newChannel.data?.name,
+      });
+    } catch (error) {
+      console.error("Error creating channel:", error);
+      toast({
+        title: "Error creating channel",
+        description: "Check the console for more info",
+        type: "foreground",
+        // duration: 5000,
+        variant: "destructive",
+      });
+    }
+  };
   if (!client) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex flex-col items-center justify-center h-screen">
+        <Loader className="animate-spin" />
+        <p>Loading chats...</p>
+      </div>
+    );
   }
   return (
     <Chat client={client}>
       <div className="flex h-screen">
         {/* Sidebar */}
-        <div className="w-[80px] bg-gray-800 p-4 text-white flex flex-col items-center gap-6">
-          {/* <p className="mb-4">Menu</p> */}
-          <p className="font-bold text-center bg-blue-700 p-4 rounded-md flex flex-col items-center gap-2">
-            <MessageSquare />
-            <p>Chat</p>
-          </p>
-          <Link
-            href={process.env.NEXT_PUBLIC_YOOM_URL!}
-            className="mb-4 text-white font-bold hover:text-gray-300 text-center flex flex-col items-center gap-2"
-          >
-            <Video />
-            <p>Meet</p>
-          </Link>
-          {/* <p>Other links</p> */}
-        </div>
+        <Sidebar onCreateChannel={createNewChannel} />
 
         {/* Channel List */}
         <div className="flex-grow">
-          <ChannelList sort={sort} filters={filters} options={options} />
+          <ChannelList
+            sort={sort}
+            filters={filters}
+            options={options}
+            EmptyStateIndicator={emptyChat}
+          />
           <Channel
             EmojiPicker={EmojiPicker}
             emojiSearchIndex={SearchIndex}
             AudioRecorder={Mic}
             MessageStatus={CustomMessageStatus}
+            // HeaderComponent={CustomChannelHeader}
+            DateSeparator={CustomDateSeparator}
           >
             <Window>
               <ChannelHeader />
               <MessageList />
-              <MessageInput audioRecordingEnabled />
+              <MessageInput
+              // shouldSubmit={(event) =>
+              //   event.key === "Enter" && !event.shiftKey
+              // }
+              />
             </Window>
             <Thread />
           </Channel>
