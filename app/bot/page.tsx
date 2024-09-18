@@ -6,6 +6,7 @@ import { Send, Loader2, User, Bot, ChevronLeft } from "lucide-react";
 // import ReactMarkdown from "react-markdown";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
+import ReactShowdown from "react-showdown";
 
 const ChatComponent = () => {
   const [userInput, setUserInput] = useState("");
@@ -91,7 +92,9 @@ const ChatComponent = () => {
                   // <ReactMarkdown className="prose prose-sm max-w-none">
                   // </ReactMarkdown>
                   // Removed markdown rendering for now because of bugs
-                  <p>{message.text}</p>
+                  // <p></p>
+                  // <MDXProvider>{message.text}</MDXProvider>
+                  <ReactShowdown markdown={message.text} />
                 ) : (
                   <p>{message.text}</p>
                 )}
