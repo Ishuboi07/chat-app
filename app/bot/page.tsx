@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { generateText } from "@/lib/actions/chat.actions";
 import { Send, Loader2, User, Bot, ChevronLeft } from "lucide-react";
-import ReactMarkdown from "react-markdown";
+// import ReactMarkdown from "react-markdown";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 
@@ -88,9 +88,10 @@ const ChatComponent = () => {
                 }`}
               >
                 {message.role === "model" ? (
-                  <ReactMarkdown className="prose prose-sm max-w-none">
-                    {message.text}
-                  </ReactMarkdown>
+                  // <ReactMarkdown className="prose prose-sm max-w-none">
+                  // </ReactMarkdown>
+                  // Removed markdown rendering for now because of bugs
+                  <p>{message.text}</p>
                 ) : (
                   <p>{message.text}</p>
                 )}
