@@ -18,6 +18,7 @@ import {
   TooltipUsernameMapper,
   useCreateChatClient,
   ChannelHeader,
+  // SendButton,
   //   useMessageContext,
   Window,
 } from "stream-chat-react";
@@ -142,6 +143,12 @@ export default function App({
               //   event.key === "Enter" && !event.shiftKey
               // }
               />
+              {/* <SendButton sendMessage={
+                async (message) => {
+                  console.log("message", message);
+                  return await client.
+                }
+              } /> */}
             </Window>
             <Thread />
           </Channel>

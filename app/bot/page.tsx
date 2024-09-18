@@ -3,10 +3,10 @@
 import { useState, useRef, useEffect } from "react";
 import { generateText } from "@/lib/actions/chat.actions";
 import { Send, Loader2, User, Bot, ChevronLeft } from "lucide-react";
-// import ReactMarkdown from "react-markdown";
+import ReactMarkdown from "react-markdown";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
-import ReactShowdown from "react-showdown";
+// import ReactShowdown from "react-showdown";
 
 const ChatComponent = () => {
   const [userInput, setUserInput] = useState("");
@@ -89,13 +89,14 @@ const ChatComponent = () => {
                 }`}
               >
                 {message.role === "model" ? (
-                  // <ReactMarkdown className="prose prose-sm max-w-none">
-                  // </ReactMarkdown>
+                  <ReactMarkdown className="prose prose-sm max-w-none">
+                    {message.text}
+                  </ReactMarkdown>
+                ) : (
                   // Removed markdown rendering for now because of bugs
                   // <p></p>
                   // <MDXProvider>{message.text}</MDXProvider>
-                  <ReactShowdown markdown={message.text} />
-                ) : (
+                  // <ReactShowdown markdown={message.text} />
                   <p>{message.text}</p>
                 )}
               </div>
