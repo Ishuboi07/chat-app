@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hangout
+
+Hangout is a web-based messaging and video calling application built using **Next.js**. It leverages **Stream SDK** for chat and video functionalities, **Clerk** for authentication, and **Gemini** for AI chatbot integration. This app provides features like real-time messaging, group chats, video calling, and an AI chatbot for user interactions.
+
+## Features
+
+### Chat
+
+- **Typing Indicators**: See when someone is typing.
+- **Message Replies**: Reply to specific messages in a conversation.
+- **Reactions**: Add emoji reactions to messages.
+- **Photo & File Upload**: Share images and documents.
+- **Group Chats**: Start group conversations with multiple users.
+- **Seen & Online Indicators**: Know when messages are read and when users are online.
+
+### Video Calling (Yoom/Zoom Clone)
+
+- **Schedule Meetings**: Schedule and join video meetings.
+- **Record Meetings**: Save meeting recordings for future reference.
+- **Screen Sharing**: Share your screen with others during a call.
+- **Custom Layouts**: Change the layout view (e.g., grid or speaker view).
+- **Reactions**: Send reactions during a video call.
+- **In-Call Chat**: Send messages while in a call.
+
+### AI Chatbot
+
+- **Gemini Chatbot**: Interact with an AI chatbot that assists with queries and provides automated responses.
+
+## Tech Stack
+
+- **Frontend**: [Next.js](https://nextjs.org/)
+- **UI Components**: [Shadcn UI](https://shadcn.dev/)
+- **Chat & Video Calling**: [Stream SDK](https://getstream.io/)
+- **Authentication**: [Clerk](https://clerk.dev/)
+- **AI Chatbot**: [Gemini](https://ai.google.dev/)
+- **Deployment**: [Vercel](https://vercel.com/)
+
+## System Architecture
+
+- **Authentication**: Handled by **Clerk**. After authentication, the user's details are sent to **Stream**, where a token is generated for accessing chat and video functionalities.
+- **Messaging & Video Calls**: All chat messages, video call sessions, and user data are managed and stored by **Stream SDK**. No external database is used as all data is stored in **Stream**.
+- **Serverless Architecture**: The app is deployed on **Vercel**, utilizing serverless functions provided by **AWS Lambda**.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- **Node.js** installed on your machine
+- **NPM** (or **Yarn**)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd hangout
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Set up environment variables:
+   Create a `.env.local` file in the root of the project and add the necessary API keys for **Clerk** and **Stream SDK** you can check out `.env.example` file for reference:
+   
+
+### Running the App
+
+To run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The app is deployed on **Vercel**. To deploy it yourself, follow these steps:
 
-## Learn More
+1. Link the project to your Vercel account.
+2. Set up the environment variables in Vercel.
+3. Deploy the app via Vercel's dashboard.
 
-To learn more about Next.js, take a look at the following resources:
+## Contact
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+If you have any questions or feedback, feel free to reach out!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
