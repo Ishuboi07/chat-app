@@ -100,7 +100,7 @@ Please sign in with:
 
 ### Design Document
 
-Here is the design document: [Link to deign document](https://docs.google.com/document/d/17o_3HwYCRx70qochgLVgM6FSVhc_uXcqjbwTpMxMxHQ/edit?usp=sharing)
+Here is the design document: [Link to design document](https://docs.google.com/document/d/17o_3HwYCRx70qochgLVgM6FSVhc_uXcqjbwTpMxMxHQ/edit?usp=sharing)
 
 ## Owner details
 
