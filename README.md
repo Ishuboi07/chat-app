@@ -97,6 +97,6 @@ Here is the design document: https://docs.google.com/document/d/17o_3HwYCRx70qoc
 
 This project is built by:
 
-Name: Ishaan Agarwal
-University: IIT BHU Varanasi
-Department: Ceramic Engineering
+- **Name**: Ishaan Agarwal
+- **University**: IIT BHU Varanasi
+- **Department**: Ceramic Engineering
