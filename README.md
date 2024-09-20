@@ -89,6 +89,14 @@ The app is deployed on **Vercel**. To deploy it yourself, follow these steps:
 2. Set up the environment variables in Vercel.
 3. Deploy the app via Vercel's dashboard.
 
+### Testing the application:
+
+You can see the deployed version here: [Deployed Website](https://hangout.ishaanagarwal.xyz/)
+
+Please sign in with:
+- Username: tester
+- Password: tester@imbesideyou
+
 ### Design Document
 
 Here is the design document: https://docs.google.com/document/d/17o_3HwYCRx70qochgLVgM6FSVhc_uXcqjbwTpMxMxHQ/edit?usp=sharing
