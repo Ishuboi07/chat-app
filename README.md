@@ -1,4 +1,4 @@
-# Hangout
+# Hangout 👋
 
 Hangout is a web-based messaging and video calling application built using **Next.js**. It leverages **Stream SDK** for chat and video functionalities, **Clerk** for authentication, and **Gemini** for AI chatbot integration. This app provides features like real-time messaging, group chats, video calling, and an AI chatbot for user interactions.
 
@@ -70,7 +70,6 @@ Hangout is a web-based messaging and video calling application built using **Nex
 
 4. Set up environment variables:
    Create a `.env.local` file in the root of the project and add the necessary API keys for **Clerk** and **Stream SDK** you can check out `.env.example` file for reference:
-   
 
 ### Running the App
 
@@ -93,4 +92,3 @@ The app is deployed on **Vercel**. To deploy it yourself, follow these steps:
 ## Contact
 
 If you have any questions or feedback, feel free to reach out!
-
