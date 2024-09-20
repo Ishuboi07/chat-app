@@ -102,10 +102,15 @@ Please sign in with:
 
 Here is the design document: https://docs.google.com/document/d/17o_3HwYCRx70qochgLVgM6FSVhc_uXcqjbwTpMxMxHQ/edit?usp=sharing
 
-## Contact
+## Owner details
 
 This project is built by:
 
 - **Name**: Ishaan Agarwal
 - **University**: IIT BHU Varanasi
 - **Department**: Ceramic Engineering
+
+### Contact
+
+- **Linkedin**: [Ishaan Agarwal](https://www.linkedin.com/in/ishaan-agarwal-2a6a2b221/)
+- **Email**: ishaan.agarwal.cer21@iitbhu.ac.in
