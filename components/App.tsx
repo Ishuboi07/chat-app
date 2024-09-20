@@ -126,6 +126,7 @@ export default function App({
             filters={filters}
             options={options}
             EmptyStateIndicator={emptyChat}
+            showChannelSearch
           />
           <Channel
             EmojiPicker={EmojiPicker}
