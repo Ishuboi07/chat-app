@@ -89,6 +89,14 @@ The app is deployed on **Vercel**. To deploy it yourself, follow these steps:
 2. Set up the environment variables in Vercel.
 3. Deploy the app via Vercel's dashboard.
 
+### Design Document
+
+Here is the design document: https://docs.google.com/document/d/17o_3HwYCRx70qochgLVgM6FSVhc_uXcqjbwTpMxMxHQ/edit?usp=sharing
+
 ## Contact
 
-If you have any questions or feedback, feel free to reach out!
+This project is built by:
+
+Name: Ishaan Agarwal
+University: IIT BHU Varanasi
+Department: Ceramic Engineering
