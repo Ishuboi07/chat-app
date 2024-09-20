@@ -53,7 +53,7 @@ Hangout is a web-based messaging and video calling application built using **Nex
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Ishuboi07/chat-app.git
    ```
 
 2. Navigate to the project directory:
@@ -94,6 +94,7 @@ The app is deployed on **Vercel**. To deploy it yourself, follow these steps:
 You can see the deployed version here: [Deployed Website](https://hangout.ishaanagarwal.xyz/)
 
 Please sign in with:
+
 - Username: tester
 - Password: tester@imbesideyou
 
