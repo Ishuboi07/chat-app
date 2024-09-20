@@ -97,3 +97,11 @@ body {
   @apply w-[90%];
 }
 /* @import "~stream-chat-react/dist/css/v2/index.css"; */
+@media screen and (min-width: 768px) {
+  .str-chat__send-button {
+    display: block !important;
+  }
+}
+.str-chat__send-button {
+  display: block;
+}

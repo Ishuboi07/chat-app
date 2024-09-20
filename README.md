@@ -69,17 +69,46 @@ Hangout is a web-based messaging and video calling application built using **Nex
    ```
 
 4. Set up environment variables:
-   Create a `.env.local` file in the root of the project and add the necessary API keys for **Clerk**, **Gemini** and **Stream SDK** you can check out `.env.example` file for reference:
+   Create a `.env.local` file in the root of the project and add the necessary API keys for **Clerk**, **Gemini** and **Stream SDK** you can check out `.env.example` file for reference
+
+5. Clone the video calling app repository:
+
+   ```bash
+   git clone https://github.com/Ishuboi07/zoom-clone.git
+   ```
+
+6. Navigate to the project directory:
+
+   ```bash
+   cd zoom-clone
+   ```
+
+7. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+8. Set up environment variables:
+   Create a `.env.local` file in the root of the project and add the necessary API keys for **Clerk** and **Stream SDK** you can check out `.env.example` file for reference
 
 ### Running the App
 
-To run the development server:
+First run the development server of chat-app:
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
+Then navigate to the development server of the Yoom and run it:
+
+```bash
+npm run dev
+```
+
+add the localhost server of yoom into the env of the chat app and chat-app into the yoom
+
+Open [http://localhost:3000](http://localhost:3000) and [http://localhost:3001](http://localhost:3001) to view the app in your browser.
 
 ### Deployment
 

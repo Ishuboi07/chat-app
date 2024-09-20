@@ -10,8 +10,6 @@ export default async function Home() {
     const serverClient = new StreamChat(apiKey, apiSecret);
     return serverClient.createToken(userId);
   }
-  // const openaiResponse = await OpenAiResponse();
-  // console.log(openaiResponse);
 
   const user = await currentUser();
   const apiKey = process.env.STREAM_API_KEY!;
