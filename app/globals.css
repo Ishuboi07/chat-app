@@ -90,7 +90,10 @@ body {
     @apply bg-background text-foreground;
   }
 }
-/* .str-chat__channel-list {
-  width: 50%;
-} */
+.str-chat__channel-list {
+  @apply max-w-[80%];
+}
+.str-chat__channel-list-messenger-react__main {
+  @apply w-[90%];
+}
 /* @import "~stream-chat-react/dist/css/v2/index.css"; */

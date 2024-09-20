@@ -21,6 +21,7 @@ import {
   // SendButton,
   //   useMessageContext,
   Window,
+  InfiniteScroll,
 } from "stream-chat-react";
 import "stream-chat-react/dist/css/index.css";
 // import { Button } from "@/components/ui/button";
@@ -127,6 +128,7 @@ export default function App({
             options={options}
             EmptyStateIndicator={emptyChat}
             showChannelSearch
+            Paginator={InfiniteScroll}
           />
           <Channel
             EmojiPicker={EmojiPicker}
@@ -139,17 +141,7 @@ export default function App({
             <Window>
               <ChannelHeader />
               <MessageList />
-              <MessageInput
-              // shouldSubmit={(event) =>
-              //   event.key === "Enter" && !event.shiftKey
-              // }
-              />
-              {/* <SendButton sendMessage={
-                async (message) => {
-                  console.log("message", message);
-                  return await client.
-                }
-              } /> */}
+              <MessageInput />
             </Window>
             <Thread />
           </Channel>
