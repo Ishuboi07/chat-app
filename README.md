@@ -59,7 +59,7 @@ Hangout is a web-based messaging and video calling application built using **Nex
 2. Navigate to the project directory:
 
    ```bash
-   cd hangout
+   cd chat-app
    ```
 
 3. Install the dependencies:
