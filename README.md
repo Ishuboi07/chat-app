@@ -13,7 +13,7 @@ Hangout is a web-based messaging and video calling application built using **Nex
 - **Group Chats**: Start group conversations with multiple users.
 - **Seen & Online Indicators**: Know when messages are read and when users are online.
 
-### Video Calling (Yoom/Zoom Clone)
+### Video Calling (Yoom)
 
 - **Schedule Meetings**: Schedule and join video meetings.
 - **Record Meetings**: Save meeting recordings for future reference.
@@ -39,7 +39,7 @@ Hangout is a web-based messaging and video calling application built using **Nex
 
 - **Authentication**: Handled by **Clerk**. After authentication, the user's details are sent to **Stream**, where a token is generated for accessing chat and video functionalities.
 - **Messaging & Video Calls**: All chat messages, video call sessions, and user data are managed and stored by **Stream SDK**. No external database is used as all data is stored in **Stream**.
-- **Serverless Architecture**: The app is deployed on **Vercel**, utilizing serverless functions provided by **AWS Lambda**.
+- **Frontend deployment**: The app is deployed on **Vercel** for it's frontend
 
 ## Getting Started
 
