@@ -69,7 +69,7 @@ Hangout is a web-based messaging and video calling application built using **Nex
    ```
 
 4. Set up environment variables:
-   Create a `.env.local` file in the root of the project and add the necessary API keys for **Clerk** and **Stream SDK** you can check out `.env.example` file for reference:
+   Create a `.env.local` file in the root of the project and add the necessary API keys for **Clerk**, **Gemini** and **Stream SDK** you can check out `.env.example` file for reference:
 
 ### Running the App
 
